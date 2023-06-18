@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: test
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/querydsl?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: gbitkim
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+        use_sql_comments: true # jpql
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 200
+
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace
